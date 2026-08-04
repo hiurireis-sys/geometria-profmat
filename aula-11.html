@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 11 — Poliedros Convexos, Prismas e o Teorema de Euler | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="11">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 11 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-10.html">← Aula 10</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-12.html">Aula 12 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Poliedros Convexos, Prismas e o Teorema de Euler</h1>
+    <p>A ponte entre a Geometria Plana e a Espacial</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 2 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Definir poliedro, face, aresta e vértice, e o que caracteriza um poliedro convexo.</li><li>Verificar e justificar a Relação de Euler V - A + F = 2, e conhecer os cinco poliedros de Platão.</li><li>Classificar prismas e calcular sua área lateral, área total e volume.</li><li>Compreender o Princípio de Cavalieri como ferramenta para justificar fórmulas de volume.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Poliedros: definições</h2>
+<dl class="def-list">
+<dt>Poliedro</dt><dd>sólido limitado por polígonos planos que se encontram dois a dois ao longo de segmentos.</dd>
+<dt>Face</dt><dd>cada um dos polígonos planos que limitam o poliedro.</dd>
+<dt>Aresta</dt><dd>segmento comum a exatamente duas faces.</dd>
+<dt>Vértice</dt><dd>ponto comum a três ou mais arestas (e faces).</dd>
+<dt>Poliedro convexo</dt><dd>está inteiramente de um mesmo lado do plano de cada uma de suas faces.</dd>
+</dl>
+
+<div class="theorem">
+<div class="label">Teorema 11.1 — Relação de Euler</div>
+<h4>Em todo poliedro convexo, \(V-A+F=2\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia.</strong> Remove-se uma face e projeta-se as demais sobre um plano (diagrama de Schlegel), obtendo um grafo planar conexo com os mesmos \(V\) vértices e \(A\) arestas, e \(F-1\) faces internas mais a face externa infinita (totalizando \(F\) "regiões"). Prova-se por indução no número de arestas que todo grafo planar conexo satisfaz \(V-A+F=2\) (removendo uma aresta de um ciclo por vez, cada remoção diminui \(A\) e \(F\) em 1, preservando \(V-A+F\); no caso base, uma árvore geradora tem \(F=1\) e \(A=V-1\), logo \(V-A+F=V-(V-1)+1=2\)).</p>
+</div>
+</div>
+
+<div class="note"><strong>Poliedros de Platão (regulares).</strong> Existem exatamente cinco: tetraedro (4 faces triangulares, \(V=4,A=6,F=4\)), cubo/hexaedro (6 quadradas, \(V=8,A=12,F=6\)), octaedro (8 triangulares, \(V=6,A=12,F=8\)), dodecaedro (12 pentagonais, \(V=20,A=30,F=12\)) e icosaedro (20 triangulares, \(V=12,A=30,F=20\)). Todos satisfazem Euler; a prova de que só existem cinco combina a relação de Euler com a condição de que em cada vértice concorrem pelo menos 3 faces e a soma dos ângulos das faces em cada vértice é menor que \(360°\).</p></div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<h2>2. Prismas</h2>
+<p>Um <strong>prisma</strong> é o sólido gerado por um polígono (a <em>base</em>) transladado ao longo de uma direção não paralela ao seu plano; a translação gera uma <em>base</em> congruente e paralela à primeira. É <strong>reto</strong> quando as arestas laterais são perpendiculares às bases (faces laterais retangulares) e <strong>oblíquo</strong> caso contrário. É <strong>regular</strong> quando é reto e as bases são polígonos regulares.</p>
+<dl class="def-list">
+<dt>Classificação</dt><dd>pelo número de lados da base: triangular, quadrangular (paralelepípedo, se as bases forem paralelogramos), pentagonal, etc.</dd>
+<dt>Área lateral</dt><dd>soma das áreas das faces laterais (retângulos, no prisma reto): \(A_{lat}=p\cdot h\), onde \(p\) é o perímetro da base e \(h\) a altura.</dd>
+<dt>Área total</dt><dd>\(A_{total}=A_{lat}+2S_{base}\).</dd>
+</dl>
+
+<div class="note"><strong>Princípio de Cavalieri.</strong> Se dois sólidos, apoiados sobre um mesmo plano, são tais que todo plano paralelo a esse plano determina secções de mesma área nos dois sólidos, então os dois sólidos têm o mesmo volume. Adotado como postulado, é a ferramenta central para justificar as fórmulas de volume desta e das próximas aulas.</div>
+
+<div class="theorem">
+<div class="label">Teorema 11.2 — Volume do prisma</div>
+<h4>\(V=S_{base}\cdot h\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia.</strong> Compare o prisma dado com um paralelepípedo retângulo de mesma área de base e mesma altura \(h\) (cujo volume já sabemos ser área da base vezes altura, por contagem direta de cubos unitários). Qualquer plano paralelo às bases, a uma altura \(x\), determina em ambos os sólidos uma secção congruente à base (pois a translação que gera o prisma preserva a forma da base em cada altura) — logo de mesma área. Por Cavalieri, os volumes são iguais: \(V=S_{base}\cdot h\).</p>
+</div>
+</div>
+
+<div class="example">
+<div class="label">ENQ 2022.2 — o octaedro escondido no cubo</div>
+<p>Uma questão pede a aresta e o volume de um octaedro regular cujos vértices são os centros das seis faces de um cubo de aresta 1. A chave é enxergar que a seção do octaedro pelo plano médio do cubo é um quadrado cujas diagonais são diagonais de faces do cubo — decompondo o octaedro em duas pirâmides de base quadrada (Aula 12).</p>
+</div>
+<div class="example">
+<div class="label">ENQ 2022.1 — o cubo com cantos cortados</div>
+<p>Um sólido obtido cortando um tetraedro de cada vértice de um cubo (faces octogonais regulares e triangulares) tem volume calculado como <em>volume do cubo menos oito tetraedros idênticos</em>, usando semelhança e Pitágoras para achar a aresta cortada.</p>
+</div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>Um prisma reto de base triangular tem base com área \(20\ cm^2\), perímetro da base \(24\ cm\) e altura \(9\ cm\). Calcule o volume e a área lateral.</p>
+<p><em>Solução:</em> \(V=S_{base}\cdot h=20\cdot9=180\ cm^3\). \(A_{lat}=p\cdot h=24\cdot9=216\ cm^2\).</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(11);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['11']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 11, window.ENQ_BANK || []);
+  initTeacherBoard(11);
+  initFeedbackForm('aula-11', "Poliedros Convexos, Prismas e o Teorema de Euler");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Verificador da Rela\u00e7\u00e3o de Euler e calculadora de prismas" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("eulerChecker", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

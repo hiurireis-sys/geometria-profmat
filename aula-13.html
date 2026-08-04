@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 13 — Esfera e Sólidos de Revolução | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="13">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 13 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-12.html">← Aula 12</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Esfera e Sólidos de Revolução</h1>
+    <p>Fechando o curso com a superfície mais simétrica de todas</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 2 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Definir esfera, superfície esférica, fuso e cunha esférica, e reconhecer os círculos máximo, paralelos e meridianos.</li><li>Demonstrar que toda seção de uma esfera por um plano é um círculo, e calcular seu raio.</li><li>Conhecer as fórmulas de área e volume da esfera, justificadas via Cavalieri (argumento de Arquimedes).</li><li>Definir sólidos de revolução em geral e conhecer o Teorema de Pappus-Guldin como ferramenta opcional.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Definições</h2>
+<dl class="def-list">
+<dt>Esfera \(E(O;r)\)</dt><dd>conjunto dos pontos do espaço que distam \(r\) (o raio) do centro \(O\) — inclui o interior (bola sólida); a <strong>superfície esférica</strong> é só a "casca" (pontos a distância exatamente \(r\)).</dd>
+<dt>Círculo máximo</dt><dd>seção da esfera por um plano que passa pelo centro — tem o mesmo raio \(r\) da esfera, e é o maior círculo possível na esfera.</dd>
+<dt>Paralelos</dt><dd>seções da esfera por planos perpendiculares a um eixo fixo (que não passam necessariamente pelo centro) — círculos "menores", exceto o equador (que é círculo máximo).</dd>
+<dt>Meridianos</dt><dd>círculos máximos que contêm os polos de um eixo fixo.</dd>
+<dt>Fuso esférico</dt><dd>região da superfície esférica entre dois meridianos (semicírculos máximos de mesmo eixo); sua área é proporcional ao ângulo entre eles: \(A_{fuso}=\dfrac{\theta}{360°}\cdot4\pi r^2\).</dd>
+<dt>Cunha esférica</dt><dd>o sólido correspondente ao fuso (a "fatia" de bola entre dois meridianos); \(V_{cunha}=\dfrac{\theta}{360°}\cdot\dfrac43\pi r^3\).</dd>
+</dl>
+
+<div class="theorem">
+<div class="label">Teorema 13.1</div>
+<h4>Toda seção de uma esfera por um plano é um círculo</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Seja \(\alpha\) um plano secante à esfera \(E(O;r)\), com \(d<r\) a distância de \(O\) a \(\alpha\), e \(C\) o pé da perpendicular de \(O\) a \(\alpha\). Para qualquer ponto \(P\) da interseção, o triângulo \(OCP\) é retângulo em \(C\) (pois \(OC\perp\alpha\) e \(CP\subset\alpha\)); por Pitágoras, \(CP=\sqrt{OP^2-OC^2}=\sqrt{r^2-d^2}\) — o mesmo valor para todo \(P\) na interseção. Logo a interseção é o círculo de centro \(C\) e raio \(\sqrt{r^2-d^2}\), contido em \(\alpha\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<div class="example">
+<div class="label">ENQ 2023.2 — aplicação direta</div>
+<p>Dado um plano \(\alpha\) que faz ângulo \(\theta\) com um plano \(\beta\) contendo o centro de uma esfera de raio \(3\), e a distância de \(O\) à reta de interseção dos planos, calcula-se a distância de \(O\) a \(\alpha\) via um triângulo retângulo auxiliar (usando \(\operatorname{sen}\theta\)) e aplica-se o Teorema 13.1.</p>
+</div>
+<div class="example">
+<div class="label">ENQ 2023.1 — tangência e lugar geométrico na esfera</div>
+<p>Dado \(P\) externo a uma esfera de raio \(r\) com \(PO=d\), mostra-se que \(PT\) (\(T\) na esfera) é tangente se, e somente se, \(PT=\sqrt{d^2-r^2}\) (Pitágoras, já que tangência equivale a \(OT\perp PT\)). O lugar geométrico de todos os pontos de tangência \(T\) é um <em>círculo</em>, obtido pela altura relativa à hipotenusa no triângulo retângulo \(OPT\) (relações métricas, Aula 6).</p>
+</div>
+
+<h2>2. Área e volume da esfera</h2>
+<div class="note">
+<strong>Área da superfície esférica:</strong> \(A=4\pi r^2\). <strong>Volume da esfera:</strong> \(V=\dfrac{4}{3}\pi r^3\).
+<p style="margin-top:8px">Dedução clássica (Arquimedes): compare uma semiesfera de raio \(r\) com um cilindro de raio e altura \(r\) do qual se retira um cone de mesmo raio e altura. Por Cavalieri: a qualquer altura \(x\), a seção da semiesfera é um círculo de raio \(\sqrt{r^2-x^2}\) (área \(\pi(r^2-x^2)\), Teorema 13.1); a seção do "cilindro menos cone" é uma coroa circular de área \(\pi r^2-\pi x^2\) — a mesma área em cada altura. Logo os volumes coincidem: \(V_{semiesfera}=V_{cilindro}-V_{cone}=\pi r^2\cdot r-\frac13\pi r^2\cdot r=\frac23\pi r^3\); a esfera completa tem \(V=\frac43\pi r^3\).</p>
+</div>
+
+<h2>3. Sólidos de revolução</h2>
+<p>Um <strong>sólido de revolução</strong> é gerado pela rotação de uma figura plana em torno de um eixo fixo contido em seu plano. Exemplos: o <strong>cilindro</strong> (retângulo girando em torno de um lado), o <strong>cone</strong> (triângulo retângulo girando em torno de um cateto), a <strong>esfera</strong> (semicírculo girando em torno do diâmetro), e os <strong>troncos</strong> (trapézio retângulo girando em torno do lado perpendicular às bases).</p>
+<div class="note"><strong>Teorema de Pappus-Guldin (opcional, enriquecimento).</strong> O volume de um sólido de revolução gerado por uma região plana que não cruza o eixo é \(V=2\pi \bar d \cdot S\), onde \(S\) é a área da região e \(\bar d\) é a distância do seu centroide (centro de massa) ao eixo. Analogamente, a área da superfície gerada pela rotação de uma curva plana é \(A=2\pi\bar d\cdot L\), \(L\) o comprimento da curva. É uma ferramenta poderosa — por exemplo, o volume do toro (rosquinha) sai imediatamente desse teorema, sem precisar de integrais.</div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>Um plano secciona uma esfera de raio \(13\) a uma distância de \(5\) do centro. Qual a área do círculo-seção?</p>
+<p><em>Solução:</em> raio da seção \(=\sqrt{13^2-5^2}=\sqrt{144}=12\). Área \(=\pi\cdot144=144\pi\).</p>
+</div>
+
+<div class="note"><strong>Fechando o curso:</strong> ao longo das 13 aulas percorremos toda a Geometria Euclidiana plana e espacial do PROFMAT — dos postulados mais primitivos até o volume da esfera — sempre com um olho no que mais aparece no ENQ. Use o simulado final (nesta página) para revisar, de forma cumulativa, as 24 questões de geometria selecionadas de onze provas ENQ (2021.1 a 2026.1).</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(13);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['13']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 13, window.ENQ_BANK || []);
+  initTeacherBoard(13);
+  initFeedbackForm('aula-13', "Esfera e S\u00f3lidos de Revolu\u00e7\u00e3o");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Calculadora de esfera: se\u00e7\u00f5es, \u00e1rea e volume" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("sphereExplorer", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

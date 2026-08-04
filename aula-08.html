@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 08 — Áreas de Figuras Planas | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="8">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 8 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-07.html">← Aula 7</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-09.html">Aula 9 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Áreas de Figuras Planas</h1>
+    <p>Dos axiomas de área à fórmula trigonométrica do triângulo</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 3 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Enunciar os axiomas de área (congruência, aditividade, unidade) e o conceito de equidecomposição.</li><li>Deduzir as fórmulas de área do quadrado, retângulo, paralelogramo, triângulo, losango, trapézio e polígonos em geral.</li><li>Demonstrar a fórmula trigonométrica da área do triângulo e a razão entre áreas de triângulos semelhantes.</li><li>Conhecer a fórmula de Heron como ferramenta opcional.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Axiomas de área</h2>
+<p>A <strong>área</strong> é uma função que associa a cada região poligonal um número real não negativo, satisfazendo três axiomas:</p>
+<div class="note">
+<strong>Axioma da congruência.</strong> Regiões congruentes têm áreas iguais.<br>
+<strong>Axioma da aditividade.</strong> Se uma região é dividida em duas (sem sobreposição de interior), sua área é a soma das áreas das partes.<br>
+<strong>Axioma da unidade.</strong> Um quadrado de lado \(1\) tem área \(1\).
+</div>
+<p>Duas figuras são <strong>equidecomponíveis</strong> quando podemos dividir uma delas em um número finito de partes que, reorganizadas, formam a outra — pelos axiomas acima, figuras equidecomponíveis têm a mesma área. Essa ideia é a ferramenta central para deduzir as fórmulas abaixo.</p>
+
+<h2>2. Das fórmulas básicas ao polígono geral</h2>
+<div class="note"><strong>Quadrado</strong> de lado \(\ell\): \(S=\ell^2\) (axioma da unidade generalizado, contando quadradinhos unitários).</div>
+<div class="note"><strong>Retângulo</strong> de lados \(b,h\): \(S=bh\) (mesma ideia, contando uma grade de \(b\times h\) quadrados unitários quando \(b,h\) são inteiros; o caso geral segue por aproximação).</div>
+<div class="note"><strong>Paralelogramo</strong> de base \(b\) e altura \(h\): recortando o triângulo formado por uma altura e "colando-o" do lado oposto, transforma-se o paralelogramo, por equidecomposição, num retângulo de mesma base e altura. Logo \(S=bh\).</div>
+<div class="note"><strong>Triângulo</strong> de base \(b\) e altura \(h\): dois triângulos congruentes ao original formam um paralelogramo de base \(b\) e altura \(h\) (aditividade). Logo \(S_\triangle=\dfrac{bh}{2}\).</div>
+<div class="note"><strong>Losango</strong> de diagonais \(d,D\): as diagonais dividem o losango em quatro triângulos retângulos congruentes (pois se cruzam perpendicularmente no ponto médio de ambas); reorganizando-os, formam um retângulo de lados \(d\) e \(D/2\)... o resultado direto é \(S=\dfrac{dD}{2}\) (também obtido tratando-o como "quadrilátero com diagonais perpendiculares").</div>
+<div class="note"><strong>Trapézio</strong> de bases \(B,b\) e altura \(h\): dois trapézios congruentes ao original, encaixados de cabeça para baixo, formam um paralelogramo de base \(B+b\) e altura \(h\). Logo \(S=\dfrac{(B+b)h}{2}\).</div>
+<div class="note"><strong>Polígono qualquer:</strong> decompõe-se em triângulos (triangulação) a partir de um vértice ou de um ponto interior, e soma-se (aditividade) a área de cada triângulo.</div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<div class="theorem">
+<div class="label">Teorema 8.1 — Área via seno do ângulo</div>
+<h4>\(S_{\triangle ABC}=\dfrac{AB\cdot AC\cdot\operatorname{sen}\widehat A}{2}\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Seja \(h\) a altura relativa a \(AC=b\), a partir de \(B\). No triângulo retângulo formado pela altura, \(\operatorname{sen}\widehat A=\frac{h}{c}\) (onde \(c=AB\)), logo \(h=c\operatorname{sen}\widehat A\). Substituindo em \(S=\frac{bh}{2}\): \(S=\frac{bc\operatorname{sen}\widehat A}{2}\). Se \(\widehat A\) é obtuso, o argumento é análogo usando o suplemento (mesmo seno).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 8.2 — Razão de áreas em triângulos semelhantes</div>
+<h4>Se \(ABC\sim A'B'C'\) com razão \(k\), \(\dfrac{S_{ABC}}{S_{A'B'C'}}=k^2\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p>Já demonstrado como Teorema 5.5 na Aula 5 — revisamos aqui por sua importância central no cálculo de áreas.</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="note"><strong>Fórmula de Heron (opcional).</strong> Se \(p=\frac{a+b+c}{2}\) é o semiperímetro, \(S=\sqrt{p(p-a)(p-b)(p-c)}\). Útil quando só conhecemos os três lados (sem altura nem ângulo). Pode ser deduzida combinando a Lei dos Cossenos (Aula 9) com o Teorema 8.1, mas sua manipulação algébrica é longa; vale como ferramenta de consulta.</div>
+
+<div class="example">
+<div class="label">Aplicações do ENQ: decomposição e otimização</div>
+<p><strong>ENQ 2024.1</strong> explora um hexágono convexo com lados/diagonais paralelos duas a duas: como triângulos de mesma base e mesma altura (entre paralelas) têm áreas iguais (consequência do axioma da congruência + fórmula \(S=\frac{bh}{2}\)), prova-se uma elegante relação de decomposição. <strong>ENQ 2023.1</strong> usa o Teorema 8.1 para expressar a área de um triângulo isósceles em função do ângulo do vértice, e depois otimiza essa área.</p>
+</div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>Um triângulo tem lados \(AB=10\), \(AC=14\) e \(\widehat A=60°\). Calcule sua área.</p>
+<p><em>Solução:</em> \(S=\frac{10\cdot14\cdot\operatorname{sen}60°}{2}=\frac{140\cdot\frac{\sqrt3}{2}}{2}=35\sqrt3\).</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(8);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['8']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 8, window.ENQ_BANK || []);
+  initTeacherBoard(8);
+  initFeedbackForm('aula-08', "\u00c1reas de Figuras Planas");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Calculadora de \u00e1reas de figuras planas" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("areaCalculator", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

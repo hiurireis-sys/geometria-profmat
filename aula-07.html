@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 07 — Círculo: Ângulos e Potência de Ponto | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="7">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 7 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-06.html">← Aula 6</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-08.html">Aula 8 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Círculo: Ângulos e Potência de Ponto</h1>
+    <p>Um dos temas mais recorrentes nas provas do ENQ</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 3 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Definir circunferência, círculo e todos os seus elementos (raio, diâmetro, corda, arco, setor, segmento circular, tangente, secante).</li><li>Demonstrar que o raio é perpendicular à tangente no ponto de tangência, e a relação entre corda e distância ao centro (mediatriz da corda).</li><li>Classificar e medir os ângulos central, inscrito, semi-inscrito, interior e exterior à circunferência.</li><li>Demonstrar a Potência de Ponto nos três casos: secante-secante, tangente-secante e corda-corda.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Definições</h2>
+<dl class="def-list">
+<dt>Circunferência</dt><dd>conjunto dos pontos do plano que distam \(r\) (o <em>raio</em>) de um ponto fixo \(O\) (o <em>centro</em>).</dd>
+<dt>Círculo</dt><dd>região limitada pela circunferência (circunferência + interior).</dd>
+<dt>Raio</dt><dd>segmento que liga o centro a um ponto da circunferência (também usa-se "raio" para a medida \(r\)).</dd>
+<dt>Diâmetro</dt><dd>corda que passa pelo centro; mede \(2r\).</dd>
+<dt>Corda</dt><dd>segmento com as duas extremidades na circunferência.</dd>
+<dt>Arco</dt><dd>cada uma das partes em que dois pontos dividem a circunferência.</dd>
+<dt>Setor circular</dt><dd>região limitada por dois raios e o arco entre eles ("fatia de pizza").</dd>
+<dt>Segmento circular</dt><dd>região limitada por uma corda e o arco correspondente.</dd>
+<dt>Reta secante</dt><dd>reta que intercepta a circunferência em exatamente dois pontos.</dd>
+<dt>Reta tangente</dt><dd>reta que intercepta a circunferência em exatamente um ponto (o <em>ponto de tangência</em>).</dd>
+</dl>
+
+<div class="theorem">
+<div class="label">Teorema 7.1</div>
+<h4>A reta tangente a uma circunferência é perpendicular ao raio no ponto de tangência (e reciprocamente)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia.</strong> Se a reta \(t\) tangencia a circunferência em \(T\) e não fosse perpendicular a \(OT\), a perpendicular baixada de \(O\) a \(t\) tocaria \(t\) em outro ponto \(T'\neq T\), com \(OT'<OT=r\) (cateto menor que hipotenusa). Mas então existiriam pontos de \(t\) próximos a \(T'\) a uma distância de \(O\) igual a \(r\) — ou seja, um segundo ponto de \(t\) na circunferência, contradizendo a tangência (só um ponto comum). Logo \(t\perp OT\). A recíproca (perpendicular no ponto da circunferência ⇒ tangente) se prova de modo análogo, mostrando que qualquer outro ponto da reta fica a uma distância de \(O\) maior que \(r\) (hipotenusa > cateto), logo fora do círculo.</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 7.2 — Corda e distância ao centro</div>
+<h4>A mediatriz de uma corda passa pelo centro da circunferência; e a distância do centro à corda determina sua metade via Pitágoras</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Seja \(\overline{AB}\) uma corda e \(M\) seu ponto médio. Como \(OA=OB=r\), o triângulo \(OAB\) é isósceles, e a mediana \(OM\) relativa à base \(AB\) é também altura e bissetriz (Teorema 2.1 e sua consequência); logo \(OM\perp AB\), ou seja, \(OM\) está contida na mediatriz de \(AB\) — e como a mediatriz é única, \(O\) pertence a ela. Além disso, no triângulo retângulo \(OMA\): \(r^2=OM^2+MA^2\), donde \(MA=\sqrt{r^2-OM^2}\) e a corda inteira mede \(AB=2\sqrt{r^2-OM^2}\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<h2>2. Ângulos na circunferência</h2>
+<dl class="def-list">
+<dt>Ângulo central</dt><dd>vértice no centro \(O\); por definição, sua medida é igual à medida do arco que ele determina.</dd>
+<dt>Ângulo inscrito</dt><dd>vértice sobre a circunferência, lados passando por dois outros pontos dela.</dd>
+<dt>Ângulo semi-inscrito (ou de segmento)</dt><dd>vértice sobre a circunferência, um lado secante (corda) e o outro tangente.</dd>
+<dt>Ângulo interior</dt><dd>vértice interno ao círculo (não no centro), formado por duas cordas que se cruzam.</dd>
+<dt>Ângulo exterior</dt><dd>vértice externo ao círculo, formado por duas secantes, uma secante e uma tangente, ou duas tangentes.</dd>
+</dl>
+
+<div class="theorem">
+<div class="label">Teorema 7.3 — Ângulo Inscrito</div>
+<h4>Todo ângulo inscrito mede a metade do ângulo central que subtende o mesmo arco</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Caso em que o centro está em um dos lados.</strong> Seja \(\widehat{BAC}\) inscrito com \(O\) sobre \(\overline{AB}\) (\(AB\) diâmetro). O triângulo \(OAC\) é isósceles (\(OA=OC=r\)), logo \(\widehat{OAC}=\widehat{OCA}\). O ângulo central \(\widehat{BOC}\) é ângulo externo de \(OAC\) no vértice \(O\): \(\widehat{BOC}=\widehat{OAC}+\widehat{OCA}=2\widehat{BAC}\) (Teorema 3.2). Logo o inscrito é metade do central.</p>
+<p><strong>Caso geral</strong> (centro interno ou externo ao ângulo): decompõe-se (ou subtrai-se) o ângulo inscrito em dois, usando o diâmetro por \(A\), reduzindo ao caso já provado em cada parte.</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="note">Consequência: todo ângulo inscrito que subtende um diâmetro é reto (o central correspondente é raso). O ângulo <strong>semi-inscrito</strong> também mede metade do arco que compreende — a demonstração é o caso-limite do ângulo inscrito quando um dos pontos "desliza" até coincidir com o ponto de tangência.</div>
+
+<div class="note"><strong>Ângulo interior</strong> = semissoma dos dois arcos que ele e seu oposto pelo vértice determinam. <strong>Ângulo exterior</strong> = semidiferença dos dois arcos que ele "enxerga". Ambos se demonstram traçando uma corda auxiliar e usando o Teorema do Ângulo Externo (3.2) num triângulo formado pelas duas secantes/cordas e essa corda auxiliar.</div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<h2>3. Potência de um ponto</h2>
+<div class="theorem">
+<div class="label">Teorema 7.4 — Potência de Ponto (caso secante-secante)</div>
+<h4>Se por um ponto \(P\) externo passam duas secantes, cortando a circunferência em \(A,B\) e \(C,D\), então \(PA\cdot PB=PC\cdot PD\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Trace as cordas \(AD\) e \(BC\). Os ângulos \(\widehat{DAB}\) e \(\widehat{DCB}\) são inscritos subtendendo o mesmo arco \(DB\), logo congruentes; o ângulo em \(P\) é comum a \(PAD\) e \(PCB\). Por AA, \(PAD\sim PCB\), donde \(\frac{PA}{PC}=\frac{PD}{PB}\), ou seja, \(PA\cdot PB=PC\cdot PD\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="theorem">
+<div class="label">Teorema 7.5 — Potência de Ponto (caso corda-corda)</div>
+<h4>Se \(P\) é interno e duas cordas \(\overline{AB}\), \(\overline{CD}\) se cruzam em \(P\), então \(PA\cdot PB=PC\cdot PD\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Trace \(AC\) e \(BD\). Os ângulos \(\widehat{PAC}\) e \(\widehat{PDB}\) são inscritos no mesmo arco \(BC\), congruentes; \(\widehat{APC}\) e \(\widehat{DPB}\) são OPV, congruentes. Por AA, \(APC\sim DPB\), donde \(\frac{PA}{PD}=\frac{PC}{PB}\), ou seja, \(PA\cdot PB=PC\cdot PD\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="theorem">
+<div class="label">Teorema 7.6 — Potência de Ponto (caso tangente-secante)</div>
+<h4>Se \(PT\) é tangente e \(PAB\) é secante (a partir do mesmo \(P\) externo), então \(PT^2=PA\cdot PB\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> É o caso-limite do Teorema 7.4 quando a segunda secante "gira" até tangenciar a circunferência (os dois pontos de interseção colapsam em \(T\)). Formalmente: os ângulos \(\widehat{PTA}\) (semi-inscrito) e \(\widehat{TBA}\) (inscrito) subtendem o mesmo arco \(TA\), logo são congruentes; com o ângulo em \(P\) comum, \(PTA\sim PBT\) por AA, donde \(\frac{PT}{PB}=\frac{PA}{PT}\), ou seja, \(PT^2=PA\cdot PB\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="example">
+<div class="label">Esta é, quase palavra por palavra, uma questão do ENQ</div>
+<p>O <strong>ENQ 2022.1</strong> pediu exatamente os casos secante-secante e corda-corda da Potência de Ponto (Teoremas 7.4 e 7.5), com a mesma estratégia de ângulos inscritos + critério AA.</p>
+</div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>De um ponto \(P\) externo, uma secante corta a circunferência em \(A\) (mais próximo) e \(B\), com \(PA=4\) e \(AB=5\). O segmento tangente de \(P\) mede \(PT=6\). Os dados são consistentes?</p>
+<p><em>Solução:</em> \(PT^2=PA\cdot PB \Rightarrow 36=4\cdot(4+5)=36\). ✓ Consistente.</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(7);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['7']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 7, window.ENQ_BANK || []);
+  initTeacherBoard(7);
+  initFeedbackForm('aula-07', "C\u00edrculo: \u00c2ngulos e Pot\u00eancia de Ponto");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Explorador do \u00e2ngulo inscrito e \u00e2ngulo central" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("inscribedAngle", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

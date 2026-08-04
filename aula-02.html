@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 02 — Congruência de Triângulos | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="2">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 2 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-01.html">← Aula 1</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-03.html">Aula 3 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Congruência de Triângulos</h1>
+    <p>Os axiomas LLL, LAL, ALA e os casos derivados</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 0 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Classificar triângulos quanto aos lados e aos ângulos, e identificar seus elementos notáveis (medianas, alturas, bissetrizes, mediatrizes).</li><li>Enunciar os três axiomas de congruência (LLL, LAL, ALA) e deduzir os casos derivados AAL e hipotenusa-cateto.</li><li>Demonstrar o Teorema do Triângulo Isósceles e sua recíproca.</li><li>Compreender por que a congruência garante a 'unicidade' do triângulo dado certos dados.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Triângulos: definição, classificação e elementos</h2>
+<p>Dados três pontos não colineares \(A,B,C\), o <strong>triângulo</strong> \(ABC\) é a reunião dos segmentos \(\overline{AB}\), \(\overline{BC}\) e \(\overline{CA}\).</p>
+<dl class="def-list">
+<dt>Classificação quanto aos lados</dt><dd><strong>equilátero</strong> (três lados congruentes), <strong>isósceles</strong> (ao menos dois lados congruentes) ou <strong>escaleno</strong> (três lados distintos).</dd>
+<dt>Classificação quanto aos ângulos</dt><dd><strong>acutângulo</strong> (três ângulos agudos), <strong>retângulo</strong> (um ângulo reto) ou <strong>obtusângulo</strong> (um ângulo obtuso).</dd>
+</dl>
+<h3>Elementos notáveis (definições — a concorrência deles é estudada na Aula 10)</h3>
+<dl class="def-list">
+<dt>Mediana</dt><dd>segmento que liga um vértice ao ponto médio do lado oposto.</dd>
+<dt>Altura</dt><dd>segmento perpendicular a um lado (ou seu prolongamento), ligando-o ao vértice oposto.</dd>
+<dt>Bissetriz (do triângulo)</dt><dd>segmento da bissetriz de um ângulo interno até o lado oposto.</dd>
+<dt>Mediatriz (do triângulo)</dt><dd>reta perpendicular a um lado, passando pelo seu ponto médio.</dd>
+</dl>
+
+<h2>2. Congruência de triângulos</h2>
+<p>\(ABC \equiv A'B'C'\) quando existe correspondência entre vértices tal que os três lados e os três ângulos correspondentes são, respectivamente, congruentes.</p>
+<div class="note"><strong>Axioma LAL (Lado-Ângulo-Lado).</strong> Se dois lados de um triângulo e o ângulo compreendido são respectivamente congruentes a dois lados e ao ângulo compreendido de outro triângulo, os triângulos são congruentes.</div>
+<div class="note"><strong>Axioma ALA (Ângulo-Lado-Ângulo).</strong> Se dois ângulos e o lado compreendido de um triângulo são respectivamente congruentes a dois ângulos e ao lado compreendido de outro, os triângulos são congruentes.</div>
+<div class="note"><strong>Axioma LLL (Lado-Lado-Lado).</strong> Se os três lados de um triângulo são respectivamente congruentes aos três lados de outro, os triângulos são congruentes.</div>
+<p>Adotamos os três como axiomas equivalentes (nesta disciplina); Caminha deduz ALA e LLL a partir de LAL usando construções auxiliares — vale a pena revisitar essas deduções (vistas na primeira versão deste material) como exercício de rigor.</p>
+
+<h3>Casos derivados</h3>
+<div class="theorem">
+<div class="label">Caso AAL (Ângulo-Ângulo-Lado)</div>
+<h4>Dois ângulos e um lado não compreendido (oposto a um deles) bastam para a congruência</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Se dois ângulos de um triângulo são conhecidos, o terceiro fica determinado (soma \(180°\), Aula 4). Logo, conhecer dois ângulos e <em>qualquer</em> lado equivale a conhecer dois ângulos e o lado compreendido entre algum par deles — reduzindo ao caso ALA.</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="theorem">
+<div class="label">Caso especial — Hipotenusa-Cateto</div>
+<h4>Em triângulos retângulos, hipotenusa e um cateto congruentes garantem congruência</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Sejam \(ABC\) e \(A'B'C'\) retângulos em \(A\) e \(A'\), com hipotenusas \(BC=B'C'\) e catetos \(AB=A'B'\). Pelo Teorema de Pitágoras (Aula 6), \(AC=\sqrt{BC^2-AB^2}=\sqrt{B'C'^2-A'B'^2}=A'C'\). Logo os três lados são respectivamente congruentes, e pelo axioma LLL, \(ABC \equiv A'B'C'\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="note">Como consequência da própria definição de congruência: se \(ABC \equiv A'B'C'\), <strong>todos</strong> os elementos correspondentes são congruentes — não só lados e ângulos, mas também medianas, alturas, bissetrizes e mediatrizes correspondentes (pois são construídos a partir dos mesmos dados congruentes).</div>
+
+<div class="theorem">
+<div class="label">Teorema 2.1 — Triângulo Isósceles</div>
+<h4>Em todo triângulo isósceles, os ângulos da base são congruentes (e reciprocamente)</h4>
+<p>Se \(ABC\) é isósceles com \(AB=AC\), então \(\widehat B=\widehat C\). Reciprocamente, se \(\widehat B = \widehat C\), então \(AB=AC\).</p>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>(⇒) Direta.</strong> Trace a bissetriz \(AM\) de \(\widehat A\) (\(M\) sobre \(\overline{BC}\)). Em \(ABM\) e \(ACM\): \(AB=AC\) (hipótese), \(\widehat{BAM}=\widehat{CAM}\) (bissetriz), \(AM\) comum — LAL. Logo \(ABM \equiv ACM\), donde \(\widehat B=\widehat{ABM}=\widehat{ACM}=\widehat C\).</p>
+<p><strong>(⇐) Recíproca.</strong> Suponha \(\widehat B = \widehat C\). Trace novamente a bissetriz \(AM\) de \(\widehat A\). Em \(ABM\) e \(ACM\): \(\widehat{ABM}=\widehat{ACM}\) (hipótese), \(\widehat{BAM}=\widehat{CAM}\) (bissetriz), e como a soma dos ângulos é \(180°\) em ambos, também \(\widehat{AMB}=\widehat{AMC}\) — ALA (usando o lado \(AM\), comum). Logo \(ABM \equiv ACM\), donde \(AB=AC\): o triângulo é isósceles.</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="note">Consequência: no triângulo isósceles, a bissetriz do ângulo do vértice é <em>também</em> mediana e altura relativas à base (pois \(BM=MC\) e \(\widehat{AMB}=\widehat{AMC}=90°\) saem da mesma congruência \(ABM\equiv ACM\)).</div>
+
+<div class="theorem">
+<div class="label">Teorema 2.2 — Unicidade do triângulo</div>
+<h4>Dados três lados (satisfazendo a desigualdade triangular — Aula 3), o triângulo formado é único a menos de congruência</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia.</strong> É exatamente o conteúdo do axioma LLL: se dois triângulos têm os três lados respectivamente congruentes, eles são congruentes — logo não existem dois triângulos "essencialmente diferentes" (não congruentes) com os mesmos três lados. O mesmo vale, pelos axiomas LAL e ALA, quando os dados são dois lados e o ângulo compreendido, ou dois ângulos e o lado compreendido.</p>
+</div>
+</div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>Num triângulo \(ABC\), \(M\) é ponto médio de \(\overline{BC}\) e \(AM \perp BC\). Mostre que \(ABC\) é isósceles com \(AB=AC\).</p>
+<p><em>Solução:</em> em \(ABM\) e \(ACM\): \(BM=MC\), \(\widehat{AMB}=\widehat{AMC}=90°\), \(AM\) comum — LAL. Logo \(ABM\equiv ACM\), donde \(AB=AC\).</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(2);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['2']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 2, window.ENQ_BANK || []);
+  initTeacherBoard(2);
+  initFeedbackForm('aula-02', "Congru\u00eancia de Tri\u00e2ngulos");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Calculadora de congru\u00eancia e tri\u00e2ngulo is\u00f3sceles" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("isoscelesExplorer", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>
