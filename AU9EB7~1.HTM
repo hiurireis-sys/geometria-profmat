@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 05 — Semelhança de Triângulos | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="5">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 5 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-04.html">← Aula 4</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-06.html">Aula 6 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Semelhança de Triângulos</h1>
+    <p>Razão, proporção e os critérios de semelhança</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 0 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Definir razão, proporção e escala entre grandezas geométricas.</li><li>Enunciar os critérios de semelhança AA, LAL~ e LLL~, e demonstrar o critério AA.</li><li>Demonstrar o Teorema de Tales, o Teorema da Bissetriz Interna e o Teorema do Segmento Médio.</li><li>Demonstrar a razão entre perímetros e entre áreas de triângulos semelhantes.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Razão, proporção e escala</h2>
+<dl class="def-list">
+<dt>Razão</dt><dd>entre duas grandezas de mesma espécie \(a\) e \(b\) (\(b\neq0\)) é o quociente \(\frac{a}{b}\).</dd>
+<dt>Proporção</dt><dd>igualdade entre duas razões: \(\frac{a}{b}=\frac{c}{d}\).</dd>
+<dt>Escala</dt><dd>razão de proporcionalidade usada para representar uma figura maior (ou menor) preservando a forma — é exatamente a razão de semelhança entre a figura real e sua representação.</dd>
+</dl>
+
+<h2>2. Teorema de Tales</h2>
+<div class="theorem">
+<div class="label">Teorema 5.1 — Tales</div>
+<h4>Um feixe de retas paralelas determina, sobre duas transversais quaisquer, segmentos proporcionais</h4>
+<p>Se \(r_1\parallel r_2\parallel r_3\) cortam transversais \(t\) e \(t'\) em \(A,B,C\) e \(A',B',C'\), então \(\dfrac{AB}{BC}=\dfrac{A'B'}{B'C'}\).</p>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia (caso comensurável).</strong> Se \(\frac{AB}{BC}=\frac{p}{q}\) com \(p,q\) inteiros, existe um segmento unitário \(u\) com \(AB=pu\), \(BC=qu\). Dividindo \(\overline{AB}\) em \(p\) partes de medida \(u\) e \(\overline{BC}\) em \(q\) partes de medida \(u\), e traçando por cada ponto de divisão a paralela às retas dadas, obtemos sobre \(t'\) segmentos todos congruentes entre si (fatias entre paralelas igualmente espaçadas). Logo a mesma razão \(p:q\) aparece em \(t'\). O caso incomensurável segue por aproximação.</p>
+</div>
+</div>
+
+<h2>3. Semelhança de triângulos</h2>
+<p>\(ABC\sim A'B'C'\) quando \(\widehat A=\widehat{A'}\), \(\widehat B=\widehat{B'}\), \(\widehat C=\widehat{C'}\) e \(\frac{AB}{A'B'}=\frac{BC}{B'C'}=\frac{CA}{C'A'}=k\) (razão de semelhança).</p>
+<div class="note"><strong>Critérios de semelhança</strong> (análogos aos de congruência, com proporção em vez de igualdade): <strong>AA</strong> (dois ângulos congruentes), <strong>LAL~</strong> (dois lados proporcionais e o ângulo compreendido congruente), <strong>LLL~</strong> (três lados proporcionais).</div>
+
+<div class="theorem">
+<div class="label">Teorema 5.2 — Critério AA</div>
+<h4>Dois ângulos congruentes bastam para garantir semelhança</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Como a soma dos ângulos é \(180°\) (Teorema 4.2), \(\widehat C=\widehat{C'}\) também. Marque em \(A'B'\) o ponto \(B''\) com \(A'B''=AB\); por \(B''\), a paralela a \(B'C'\) corta \(A'C'\) em \(C''\). Por paralelismo, \(\widehat{A'B''C''}=\widehat{A'B'C'}=\widehat B\); com \(\widehat A=\widehat{A'}\) e \(A'B''=AB\), ALA dá \(ABC\equiv A'B''C''\). Por Tales (aplicado a \(A'B'C'\) com a paralela \(B''C''\)): \(\frac{A'B''}{A'B'}=\frac{A'C''}{A'C'}=\frac{B''C''}{B'C'}\). Combinando com a congruência (\(AB=A'B''\), \(AC=A'C''\), \(BC=B''C''\)), obtemos a proporcionalidade dos três lados: \(ABC\sim A'B'C'\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 5.3 — Teorema do Segmento Médio</div>
+<h4>O segmento que une os pontos médios de dois lados é paralelo ao terceiro e mede sua metade</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Sejam \(M,N\) pontos médios de \(\overline{AB},\overline{AC}\) em \(ABC\). Os triângulos \(AMN\) e \(ABC\) compartilham o ângulo \(\widehat A\), e \(\frac{AM}{AB}=\frac{AN}{AC}=\frac12\); por LAL~, \(AMN\sim ABC\) com razão \(\frac12\). Logo \(\widehat{AMN}=\widehat{ABC}\) (correspondentes), o que torna \(MN\parallel BC\) (ângulos correspondentes congruentes na transversal \(AB\)); e \(MN=\frac12 BC\) (razão de semelhança).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 5.4 — Teorema da Bissetriz Interna</div>
+<h4>A bissetriz interna de um ângulo divide o lado oposto em segmentos proporcionais aos lados adjacentes</h4>
+<p>Em \(ABC\), se \(AD\) é bissetriz interna de \(\widehat A\) (\(D\in\overline{BC}\)), \(\dfrac{BD}{DC}=\dfrac{AB}{AC}\).</p>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Trace por \(C\) a paralela a \(AD\); seja \(E\) o encontro com o prolongamento de \(BA\). Por Tales (\(AD\parallel CE\), transversal \(BE\)): \(\frac{BD}{DC}=\frac{BA}{AE}\). Como \(AD\parallel CE\): \(\widehat{DAC}=\widehat{ACE}\) (alternos internos) e \(\widehat{BAD}=\widehat{AEC}\) (correspondentes); como \(AD\) é bissetriz, \(\widehat{BAD}=\widehat{DAC}\), logo \(\widehat{ACE}=\widehat{AEC}\): o triângulo \(ACE\) é isósceles com \(AE=AC\). Substituindo: \(\frac{BD}{DC}=\frac{BA}{AE}=\frac{AB}{AC}\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 5.5 — Razões entre perímetros e áreas</div>
+<h4>Se \(ABC\sim A'B'C'\) com razão \(k\), a razão entre perímetros é \(k\) e a razão entre áreas é \(k^2\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Perímetros.</strong> \(P=AB+BC+CA\) e \(P'=A'B'+B'C'+C'A'\); como cada termo de \(P\) é \(k\) vezes o correspondente em \(P'\), \(P=kP'\).</p>
+<p><strong>Áreas.</strong> Sejam \(h,h'\) as alturas relativas a lados correspondentes \(a,a'\); como os triângulos retângulos formados pelas alturas também são semelhantes (mesmos ângulos), \(\frac{h}{h'}=k\) também. Logo \(\frac{S}{S'}=\frac{\frac12 ah}{\frac12 a'h'}=\frac{a}{a'}\cdot\frac{h}{h'}=k\cdot k=k^2\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>Em \(ABC\), \(AB=8\), \(AC=6\), a bissetriz de \(\widehat A\) encontra \(BC\) em \(D\), com \(BC=14\). Determine \(BD\) e \(DC\).</p>
+<p><em>Solução:</em> \(\frac{BD}{DC}=\frac86=\frac43\). Com \(BD+DC=14\): \(BD=4t,DC=3t,7t=14,t=2\). Logo \(BD=8\), \(DC=6\).</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">Seu nome (opcional)</div>
+      <input type="text" id="aluno_nome" name="aluno_nome" placeholder="Digite seu nome..." style="width:100%;border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;font-family:inherit;font-size:.95rem;">
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(5);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['5']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 5, window.ENQ_BANK || []);
+  initTeacherBoard(5);
+  initFeedbackForm('aula-05', "Semelhan\u00e7a de Tri\u00e2ngulos");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Calculadora de semelhan\u00e7a e Teorema de Tales" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("thalesSimilarity", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

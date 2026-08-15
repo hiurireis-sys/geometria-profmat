@@ -10,7 +10,7 @@
      Troque FORM_ID abaixo pelo ID do seu formulário Formspree
      (crie em https://formspree.io -> New Form -> copie o ID que
      aparece na URL https://formspree.io/f/XXXXXXX ).
-     Enquanto FORM_ID for "xoeaarlo", o site usa automaticamente
+     Enquanto FORM_ID for "SEU_FORM_ID", o site usa automaticamente
      o fallback por e-mail (mailto). */
   window.FORMSPREE_FORM_ID = "xoeaarlo";
   window.TEACHER_EMAIL = "hiuri_reis@ufg.br";
@@ -229,6 +229,7 @@
     };
     return Object.assign({
       _subject: 'Feedback Geometria PROFMAT — ' + aulaTitulo,
+      aluno_nome: (document.getElementById('aluno_nome')||{}).value || '(não informado)',
       aula_id: aulaId,
       aula_titulo: aulaTitulo,
       data_envio: todayISO(),
