@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 03 — Desigualdade Triangular e Ângulo Externo | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="3">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 3 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-02.html">← Aula 2</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-04.html">Aula 4 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Desigualdade Triangular e Ângulo Externo</h1>
+    <p>Comparando lados e ângulos de um mesmo triângulo</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 0 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Definir caminho poligonal e usar a distância entre dois pontos para justificar a desigualdade triangular.</li><li>Demonstrar as três formas da desigualdade triangular.</li><li>Definir ângulo externo e demonstrar que ele é igual à soma dos dois ângulos internos não adjacentes.</li><li>Demonstrar a desigualdade entre lado e ângulo oposto (e sua recíproca) e discutir a existência de um triângulo dados três segmentos.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Distância e caminho poligonal</h2>
+<p>Já vimos (Aula 1) que a <strong>distância</strong> \(AB\) entre dois pontos é dada pelo postulado da régua. Um <strong>caminho poligonal</strong> ligando \(A\) a \(B\) é uma sequência de segmentos consecutivos \(A P_1, P_1P_2, \dots, P_nB\); seu comprimento é a soma dos comprimentos dos segmentos. Intuitivamente (e isso é o conteúdo da desigualdade triangular), o caminho <em>mais curto</em> entre dois pontos é o segmento de reta que os une diretamente.</p>
+
+<h2>2. Ângulo externo</h2>
+<p>Em um triângulo \(ABC\), o <strong>ângulo externo</strong> em \(C\) é o ângulo adjacente e suplementar ao ângulo interno \(\widehat C\), formado por um lado e o prolongamento do outro. Os ângulos internos \(\widehat A\) e \(\widehat B\) são os <strong>não adjacentes</strong> a esse ângulo externo.</p>
+
+<div class="theorem">
+<div class="label">Teorema 3.1 — Ângulo Externo (versão fraca: desigualdade)</div>
+<h4>Um ângulo externo é maior que qualquer ângulo interno não adjacente a ele</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Seja \(\theta\) o ângulo externo em \(C\). Seja \(M\) o ponto médio de \(\overline{AC}\); prolongue \(\overline{BM}\) até \(D\) com \(MD=MB\). Em \(AMB\) e \(CMD\): \(AM=MC\), \(BM=MD\), \(\widehat{AMB}=\widehat{CMD}\) (OPV) — LAL. Logo \(AMB\equiv CMD\), donde \(\widehat A=\widehat{MCD}\). Como \(D\) é interior ao ângulo externo \(\theta\), \(\widehat{MCD}<\theta\), logo \(\widehat A<\theta\). Argumento análogo (usando o ponto médio de \(\overline{BC}\)) dá \(\widehat B<\theta\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 3.2 — Ângulo Externo (versão forte: igualdade)</div>
+<h4>O ângulo externo é exatamente igual à soma dos dois ângulos internos não adjacentes</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> O ângulo externo \(\theta\) em \(C\) é suplementar ao ângulo interno: \(\theta = 180°-\widehat C\). Pela soma dos ângulos internos (Teorema 4.2, demonstrado com o postulado das paralelas na Aula 4), \(\widehat A+\widehat B+\widehat C=180°\), logo \(\widehat A+\widehat B = 180°-\widehat C=\theta\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="note">Note a diferença de status: o Teorema 3.1 (desigualdade) usa <em>apenas</em> os axiomas de congruência, sem precisar do postulado das paralelas — por isso pode ser provado já nesta aula. Já a igualdade exata (Teorema 3.2) depende do postulado das paralelas e só pode ser justificada completamente depois da Aula 4. Ainda assim, a desigualdade já garante uma consequência importante: nenhum triângulo pode ter dois ângulos internos retos ou obtusos.</div>
+
+<h2>3. Desigualdade triangular</h2>
+<div class="theorem">
+<div class="label">Teorema 3.3 — Lados e ângulos opostos</div>
+<h4>Ao maior lado opõe-se o maior ângulo, e reciprocamente</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>(Lado maior ⇒ ângulo maior).</strong> Se \(AC>AB\) em \(ABC\), existe \(D\in\overline{AC}\) com \(AD=AB\). O triângulo \(ABD\) é isósceles, logo \(\widehat{ABD}=\widehat{ADB}\) (Teorema 2.1). Como \(\widehat{ADB}\) é ângulo externo de \(BDC\) no vértice \(D\), pelo Teorema 3.1, \(\widehat{ADB}>\widehat C\). Como \(D\) está entre \(A\) e \(C\), a semirreta \(BD\) é interna a \(\widehat{ABC}\), logo \(\widehat B=\widehat{ABC}>\widehat{ABD}=\widehat{ADB}>\widehat C\). Portanto \(\widehat B>\widehat C\).</p>
+<p><strong>(Recíproca: ângulo maior ⇒ lado maior).</strong> Suponha \(\widehat B>\widehat C\) mas, por absurdo, \(AC\leq AB\). Se \(AC=AB\), o triângulo seria isósceles e \(\widehat B=\widehat C\) (Teorema 2.1), contradição. Se \(AC<AB\), pela parte já provada (trocando os papéis), teríamos \(\widehat C>\widehat B\), também contradição. Logo \(AC>AB\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 3.4 — Desigualdade Triangular</div>
+<h4>Cada lado de um triângulo é menor que a soma dos outros dois, e maior que o módulo de sua diferença</h4>
+<p>Em qualquer triângulo \(ABC\): \(|AC-CB| < AB < AC+CB\).</p>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>\(AB<AC+CB\).</strong> Prolongue \(\overline{AC}\) além de \(C\) até \(D\) com \(CD=CB\). O triângulo \(BCD\) é isósceles, logo \(\widehat{CBD}=\widehat{CDB}=\widehat{ADB}\). Como a semirreta \(BC\) é interna a \(\widehat{ABD}\), \(\widehat{ABD}=\widehat{ABC}+\widehat{CBD}>\widehat{CBD}=\widehat{ADB}\). Pelo Teorema 3.3 aplicado a \(ABD\), o lado oposto ao maior ângulo é maior: \(AD>AB\). Mas \(AD=AC+CD=AC+CB\). Logo \(AB<AC+CB\).</p>
+<p><strong>\(AB>|AC-CB|\).</strong> Segue da desigualdade já provada aplicada ao triângulo com os papéis trocados: de \(AC<AB+CB\) obtemos \(AC-CB<AB\); e de \(CB<AB+AC\) obtemos \(CB-AC<AB\). Combinando, \(|AC-CB|<AB\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="note"><strong>Existência do triângulo.</strong> Dados três segmentos de medidas \(a\), \(b\), \(c\), existe um triângulo com esses lados se, e somente se, cada um deles é menor que a soma dos outros dois (equivalentemente, o maior é menor que a soma dos outros dois). Essa é a condição prática mais usada para decidir, a partir de três números, se "dá para formar um triângulo".</div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>Dois lados de um triângulo medem \(7\) cm e \(11\) cm. Entre quais valores deve estar o terceiro lado \(x\)?</p>
+<p><em>Solução:</em> \(11-7 < x < 11+7\), ou seja, \(4<x<18\).</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">Seu nome (opcional)</div>
+      <input type="text" id="aluno_nome" name="aluno_nome" placeholder="Digite seu nome..." style="width:100%;border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;font-family:inherit;font-size:.95rem;">
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(3);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['3']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 3, window.ENQ_BANK || []);
+  initTeacherBoard(3);
+  initFeedbackForm('aula-03', "Desigualdade Triangular e \u00c2ngulo Externo");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Verificador de exist\u00eancia de tri\u00e2ngulo (desigualdade triangular)" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("triangleInequality", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

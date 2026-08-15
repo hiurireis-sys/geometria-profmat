@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 10 — Pontos Notáveis do Triângulo e Lugares Geométricos | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="10">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 10 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-09.html">← Aula 9</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-11.html">Aula 11 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Pontos Notáveis do Triângulo e Lugares Geométricos</h1>
+    <p>Baricentro, incentro, circuncentro, ortocentro e o Teorema de Ceva</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 1 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Definir lugar geométrico e reconhecer mediatriz, bissetriz, circunferência, retas paralelas e faixa a distância fixa como exemplos.</li><li>Demonstrar a concorrência das mmedianas, das bissetrizes internas, das mediatrizes e das alturas.</li><li>Conhecer a Reta de Euler como resultado opcional de aprofundamento.</li><li>Usar o Teorema de Ceva para justificar concorrências, como no ENQ 2021.1.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Lugares geométricos</h2>
+<p>Um <strong>lugar geométrico (LG)</strong> é o conjunto de todos os pontos que satisfazem uma dada propriedade — e <em>somente</em> esses pontos (ou seja, é preciso provar as duas direções: todo ponto com a propriedade está no conjunto, e todo ponto do conjunto tem a propriedade).</p>
+<dl class="def-list">
+<dt>Mediatriz de \(\overline{AB}\)</dt><dd>LG dos pontos equidistantes de \(A\) e \(B\); é a reta perpendicular a \(\overline{AB}\) por seu ponto médio.</dd>
+<dt>Bissetriz de um ângulo</dt><dd>LG dos pontos internos ao ângulo equidistantes de seus dois lados.</dd>
+<dt>Circunferência de centro \(O\) e raio \(r\)</dt><dd>LG dos pontos que distam exatamente \(r\) de \(O\).</dd>
+<dt>Reta paralela a uma reta \(r\), a uma distância \(d\)</dt><dd>LG dos pontos a distância \(d\) de \(r\) (na verdade, duas retas — uma de cada lado).</dd>
+<dt>Faixa (região entre duas paralelas)</dt><dd>LG dos pontos cuja distância a uma reta \(r\) é no máximo \(d\).</dd>
+</dl>
+
+<h2>2. Os quatro pontos notáveis</h2>
+<table class="enq-table">
+<tr><th>Ponto</th><th>Interseção de...</th><th>Propriedade characterística</th></tr>
+<tr><td><strong>Baricentro</strong> \(G\)</td><td>as três medianas</td><td>divide cada mediana na razão \(2:1\) a partir do vértice</td></tr>
+<tr><td><strong>Incentro</strong> \(I\)</td><td>as três bissetrizes internas</td><td>equidistante dos três lados — centro da circunferência inscrita</td></tr>
+<tr><td><strong>Circuncentro</strong> \(O\)</td><td>as três mediatrizes</td><td>equidistante dos três vértices — centro da circunferência circunscrita</td></tr>
+<tr><td><strong>Ortocentro</strong> \(H\)</td><td>as três alturas</td><td>—</td></tr>
+</table>
+
+<div class="theorem">
+<div class="label">Teorema 10.1 — Concorrência das mediatrizes (circuncentro)</div>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Sejam \(m_{AB}\) e \(m_{BC}\) as mediatrizes de \(\overline{AB}\) e \(\overline{BC}\), que se cruzam em \(O\) (não são paralelas, pois \(AB\) e \(BC\) não são paralelos). Como \(O\in m_{AB}\), \(OA=OB\) (LG da mediatriz); como \(O\in m_{BC}\), \(OB=OC\). Logo \(OA=OC\), ou seja, \(O\) é equidistante de \(A\) e \(C\), logo pertence também à mediatriz de \(\overline{AC}\): as três mediatrizes concorrem em \(O\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 10.2 — Concorrência das bissetrizes internas (incentro)</div>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Sejam as bissetrizes internas de \(\widehat A\) e \(\widehat B\), que se cruzam em \(I\) (interno ao triângulo). Como \(I\) está na bissetriz de \(\widehat A\), \(I\) é equidistante dos lados \(AB\) e \(AC\) (LG da bissetriz); como está na bissetriz de \(\widehat B\), é equidistante de \(AB\) e \(BC\). Logo \(I\) é equidistante de \(AC\) e \(BC\), pertencendo também à bissetriz de \(\widehat C\): as três concorrem em \(I\), que é o centro da circunferência inscrita (raio = distância comum aos três lados).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 10.3 — Concorrência das medianas (baricentro)</div>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia (via Teorema do Segmento Médio).</strong> Sejam \(M,N\) pontos médios de \(BC,AC\), e \(G=AM\cap BN\). Usando o Teorema do Segmento Médio (5.3) no triângulo \(ABG\)... (ou, de forma mais direta, no triângulo formado pelos pontos médios): mostra-se que \(G\) divide \(AM\) e \(BN\) na razão \(2:1\) a partir dos vértices \(A\) e \(B\) — e, por unicidade dessa razão (o mesmo argumento aplicado a qualquer par de medianas dá o mesmo ponto), a terceira mediana \(CP\) passa pelo mesmo \(G\). Uma prova alternativa, mais direta, usa o Teorema de Ceva (abaixo).</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 10.4 — Concorrência das alturas (ortocentro)</div>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia (truque do triângulo medial).</strong> Por cada vértice de \(ABC\), trace a paralela ao lado oposto; essas três retas formam um triângulo maior \(A'B'C'\), do qual \(A,B,C\) são os pontos médios dos lados (pois \(ABC\) vira o "triângulo medial" de \(A'B'C'\)). As alturas de \(ABC\) são, por construção, as mediatrizes de \(A'B'C'\) (perpendiculares aos lados de \(A'B'C'\) pelos seus pontos médios \(A,B,C\)) — que concorrem pelo Teorema 10.1.</p>
+</div>
+</div>
+
+<div class="note"><strong>Reta de Euler (opcional, aprofundamento).</strong> Os pontos \(G\) (baricentro), \(O\) (circuncentro) e \(H\) (ortocentro) de qualquer triângulo são colineares, e vale \(\vec{OH}=3\vec{OG}\) — ou seja, \(G\) está sempre entre \(O\) e \(H\), a um terço da distância de \(O\) a \(H\). A prova usa vetores e foge do escopo desta aula, mas é um resultado clássico e bonito para compartilhar com alunos mais avançados.</div>
+
+<h2>3. Teorema de Ceva</h2>
+<p>Uma <strong>ceviana</strong> interna liga um vértice a um ponto do lado oposto.</p>
+<div class="note"><strong>Teorema de Ceva.</strong> As cevianas internas \(AA'\), \(BB'\), \(CC'\) de \(ABC\) concorrem se, e somente se, \(\dfrac{BA'}{A'C}\cdot\dfrac{CB'}{B'A}\cdot\dfrac{AC'}{C'B}=1\).</div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<div class="theorem">
+<div class="label">Aplicação — medianas e bissetrizes via Ceva</div>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Medianas.</strong> \(A',B',C'\) pontos médios ⇒ cada razão vale \(1\) ⇒ produto \(=1\) ⇒ concorrem (Teorema de Ceva) — prova alternativa e mais direta do Teorema 10.3.</p>
+<p><strong>Bissetrizes internas.</strong> Pelo Teorema da Bissetriz Interna (5.4): \(\frac{BA'}{A'C}=\frac{AB}{AC}\), \(\frac{CB'}{B'A}=\frac{BC}{AB}\), \(\frac{AC'}{C'B}=\frac{AC}{BC}\); o produto é \(1\) — concorrem (prova alternativa do Teorema 10.2).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="example">
+<div class="label">Esta é praticamente a questão do ENQ 2021.1</div>
+<p>O <strong>ENQ 2021.1</strong> enuncia o Teorema de Ceva e pede exatamente estas duas provas de concorrência como aplicação direta.</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">Seu nome (opcional)</div>
+      <input type="text" id="aluno_nome" name="aluno_nome" placeholder="Digite seu nome..." style="width:100%;border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;font-family:inherit;font-size:.95rem;">
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(10);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['10']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 10, window.ENQ_BANK || []);
+  initTeacherBoard(10);
+  initFeedbackForm('aula-10', "Pontos Not\u00e1veis do Tri\u00e2ngulo e Lugares Geom\u00e9tricos");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Quiz e explorador dos pontos not\u00e1veis do tri\u00e2ngulo" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("notablePointsQuiz", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

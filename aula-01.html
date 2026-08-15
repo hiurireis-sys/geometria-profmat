@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 01 — Conceitos Primitivos, Postulados e Ângulos | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="1">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 1 de 13</span>
+    <div class="nav-buttons">
+      
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-02.html">Aula 2 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Conceitos Primitivos, Postulados e Ângulos</h1>
+    <p>Os alicerces axiomáticos da Geometria Euclidiana plana</p>
+    <div class="pill-row">
+      <span class="pill">🎯 5 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 0 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Reconhecer ponto, reta e plano como noções primitivas, e as relações de pertinência e interseção entre eles.</li><li>Definir semirreta, segmento de reta, segmentos consecutivos/colineares/congruentes, ponto médio e distância entre dois pontos.</li><li>Enunciar os postulados de existência e unicidade da reta e do plano, o postulado da régua e o postulado do transporte de segmentos.</li><li>Definir ângulo (interior/exterior, medida, bissetriz) e os pares de ângulos consecutivos, adjacentes, opostos pelo vértice, complementares e suplementares.</li><li>Enunciar os postulados do transporte de ângulos e da aditividade das medidas, e demonstrar os teoremas de ângulos desta aula.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Conceitos primitivos</h2>
+<p>Toda teoria dedutiva precisa de um ponto de partida que não seja, ele mesmo, demonstrado — senão cairíamos numa cadeia infinita de justificativas. Na Geometria Euclidiana, esse ponto de partida são as <strong>noções primitivas</strong>: ponto, reta e plano. Não as definimos; apenas as descrevemos intuitivamente e estabelecemos, por meio de postulados, como elas se relacionam.</p>
+<dl class="def-list">
+<dt>Ponto</dt><dd>noção primitiva; não tem dimensão. Notação: letras latinas maiúsculas (\(A, B, C, \dots\)).</dd>
+<dt>Reta</dt><dd>noção primitiva; tem uma dimensão, é ilimitada nos dois sentidos. Notação: letras latinas minúsculas (\(r, s, t, \dots\)).</dd>
+<dt>Plano</dt><dd>noção primitiva; tem duas dimensões, é ilimitado. Notação: letras gregas minúsculas (\(\alpha, \beta, \gamma, \dots\)).</dd>
+<dt>Pertinência</dt><dd>relação entre um ponto e uma reta (ou plano) que contém esse ponto. Escrevemos \(A \in r\) ("A pertence a r") ou \(A \notin r\).</dd>
+<dt>Interseção</dt><dd>conjunto de pontos comuns a duas figuras. Duas retas distintas se interceptam em, no máximo, um ponto; dois planos distintos, quando se interceptam, fazem-no segundo uma reta.</dd>
+</dl>
+
+<h2>2. Postulados primitivos</h2>
+<p>As <strong>proposições primitivas</strong>, ou <strong>postulados</strong> (também chamados <strong>axiomas</strong>), são afirmações aceitas sem demonstração — a partir delas, e só delas, deduzimos por lógica todos os teoremas da disciplina.</p>
+<div class="note"><strong>Postulado da existência.</strong> Numa reta, bem como fora dela, há infinitos pontos. Num plano há infinitos pontos, e também há infinitos pontos fora dele.</div>
+<div class="note"><strong>Postulado da determinação da reta.</strong> Dois pontos distintos determinam uma única reta que os contém.</div>
+<div class="note"><strong>Postulado da determinação do plano.</strong> Três pontos não colineares (isto é, que não pertencem todos a uma mesma reta) determinam um único plano que os contém.</div>
+<div class="note"><strong>Postulado da régua.</strong> A cada reta pode-se associar uma correspondência biunívoca com o conjunto dos números reais, de modo que a distância entre dois pontos quaisquer da reta seja o módulo da diferença de suas coordenadas nessa correspondência. Esse postulado é o que permite <em>medir</em> segmentos.</div>
+<div class="note"><strong>Postulado do transporte de segmentos.</strong> Dado um segmento \(\overline{AB}\) e uma semirreta de origem \(C\), existe um único ponto \(D\) nessa semirreta tal que \(CD = AB\). Em outras palavras: sempre podemos "copiar" um segmento sobre uma semirreta dada.</div>
+
+<h2>3. Semirretas, segmentos e distância</h2>
+<p>Um ponto \(A\) de uma reta \(r\) a divide em duas <strong>semirretas</strong> de origem \(A\). Dados dois pontos \(A\) e \(B\) de uma reta, o <strong>segmento de reta</strong> \(\overline{AB}\) é o conjunto formado por \(A\), \(B\) e todos os pontos entre eles (\(A\) e \(B\) são as <em>extremidades</em>).</p>
+<dl class="def-list">
+<dt>Segmentos consecutivos</dt><dd>dois segmentos que têm uma extremidade em comum (e não estão sobrepostos além dela). Ex.: \(\overline{AB}\) e \(\overline{BC}\).</dd>
+<dt>Segmentos colineares</dt><dd>dois ou mais segmentos contidos numa mesma reta.</dd>
+<dt>Segmentos congruentes</dt><dd>dois segmentos que têm a mesma medida. Notação: \(\overline{AB} \equiv \overline{CD}\), ou simplesmente \(AB=CD\) quando nos referimos às medidas.</dd>
+<dt>Ponto médio</dt><dd>o ponto \(M \in \overline{AB}\) tal que \(AM=MB=\frac{AB}{2}\).</dd>
+<dt>Distância entre dois pontos</dt><dd>o número real não negativo \(AB\), dado pelo postulado da régua como o módulo da diferença das coordenadas de \(A\) e \(B\) numa reta que os contém. \(AB=0 \Leftrightarrow A=B\).</dd>
+</dl>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<h2>4. Ângulos</h2>
+<p>Um <strong>ângulo</strong> \(\widehat{AOB}\) é a figura formada por duas semirretas \(OA\) e \(OB\) de mesma origem \(O\) (o <strong>vértice</strong>); cada semirreta é um <strong>lado</strong> do ângulo. O <strong>interior</strong> do ângulo (convexo, isto é, menor que \(180°\)) é a interseção dos dois semiplanos determinados por cada lado que contêm o outro lado; o <strong>exterior</strong> é o complementar do ângulo e de seu interior.</p>
+<p>A <strong>medida</strong> de um ângulo é um número real entre \(0°\) e \(360°\) (aqui trabalharemos com ângulos convexos, entre \(0°\) e \(180°\)). Classificamos: <strong>reto</strong> (\(90°\)), <strong>agudo</strong> (\(<90°\)), <strong>obtuso</strong> (entre \(90°\) e \(180°\)), <strong>raso</strong> (\(180°\)).</p>
+<p>A <strong>bissetriz</strong> de \(\widehat{AOB}\) é a semirreta \(OC\), interna ao ângulo, tal que \(\widehat{AOC}=\widehat{COB}\).</p>
+
+<h3>Pares de ângulos</h3>
+<dl class="def-list">
+<dt>Ângulos consecutivos</dt><dd>têm o mesmo vértice e um lado comum.</dd>
+<dt>Ângulos adjacentes</dt><dd>consecutivos e, além disso, sem pontos interiores comuns (estão em semiplanos opostos em relação ao lado comum).</dd>
+<dt>Ângulos opostos pelo vértice (OPV)</dt><dd>os lados de um são as semirretas opostas aos lados do outro (formados por duas retas concorrentes).</dd>
+<dt>Ângulos complementares</dt><dd>a soma das medidas é \(90°\).</dd>
+<dt>Ângulos suplementares</dt><dd>a soma das medidas é \(180°\).</dd>
+</dl>
+
+<div class="note"><strong>Postulado do transporte de ângulos.</strong> Dado um ângulo \(\widehat{AOB}\) e uma semirreta \(O'A'\), existe, em cada semiplano determinado por essa semirreta, uma única semirreta \(O'B'\) tal que \(\widehat{A'O'B'} = \widehat{AOB}\).</div>
+<div class="note"><strong>Postulado da aditividade das medidas.</strong> Se a semirreta \(OC\) é interna ao ângulo \(\widehat{AOB}\), então \(\widehat{AOB} = \widehat{AOC}+\widehat{COB}\).</div>
+
+<div class="theorem">
+<div class="label">Teorema 1.1</div>
+<h4>Ângulos opostos pelo vértice são congruentes</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Sejam as retas concorrentes \(r\) e \(s\), com \(r \cap s = \{O\}\), formando quatro ângulos ao redor de \(O\): dois deles, opostos pelo vértice, chamemos \(\alpha\) e \(\beta\); os outros dois (adjacentes a ambos), \(\gamma\) e \(\delta\).</p>
+<p>Como \(\alpha\) e \(\gamma\) são adjacentes e seus lados não comuns formam a reta \(s\) (ângulo raso), \(\alpha+\gamma=180°\) (aditividade). Do mesmo modo, \(\beta\) e \(\gamma\) são adjacentes com lados não comuns formando \(r\), logo \(\beta+\gamma=180°\).</p>
+<p>Subtraindo as duas igualdades: \((\alpha+\gamma)-(\beta+\gamma)=0\), ou seja, \(\alpha=\beta\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 1.2</div>
+<h4>A bissetriz divide o ângulo em dois ângulos congruentes cuja soma é o ângulo original</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Segue diretamente da definição de bissetriz (\(\widehat{AOC}=\widehat{COB}\)) combinada com o postulado da aditividade (\(\widehat{AOB}=\widehat{AOC}+\widehat{COB}\)); logo cada um dos dois ângulos mede exatamente \(\frac{\widehat{AOB}}{2}\).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="theorem">
+<div class="label">Teorema 1.3 — Soma de ângulos adjacentes complementares/suplementares</div>
+<h4>Ângulos adjacentes cujos lados não comuns são perpendiculares (ou formam reta) somam 90° (ou 180°)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Se os lados não comuns de dois ângulos adjacentes \(\widehat{AOB}\) e \(\widehat{BOC}\) formam um ângulo raso \(\widehat{AOC}\) (isto é, \(A\), \(O\), \(C\) colineares), pela aditividade \(\widehat{AOB}+\widehat{BOC}=\widehat{AOC}=180°\): são suplementares. Se, em vez disso, os lados não comuns são perpendiculares (\(\widehat{AOC}=90°\)), o mesmo argumento dá \(\widehat{AOB}+\widehat{BOC}=90°\): são complementares.</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>Dois ângulos são complementares e um deles mede o triplo do outro. Quais são as medidas?</p>
+<p><em>Solução:</em> sejam \(x\) e \(3x\). Como são complementares, \(x+3x=90° \Rightarrow x=22{,}5°\). Os ângulos medem \(22{,}5°\) e \(67{,}5°\).</p>
+</div>
+
+<div class="note">Nas primeiras aulas o formalismo axiomático pode parecer distante da sala de aula da Educação Básica — mas é exatamente esse rigor que permite, mais adiante, justificar por que "funciona" cada fórmula que os alunos decoram. Vale a pena, com sua turma, ao menos comentar a ideia de que "nem tudo pode ser provado a partir do nada": é preciso um ponto de partida.</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">Seu nome (opcional)</div>
+      <input type="text" id="aluno_nome" name="aluno_nome" placeholder="Digite seu nome..." style="width:100%;border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;font-family:inherit;font-size:.95rem;">
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(1);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['1']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 1, window.ENQ_BANK || []);
+  initTeacherBoard(1);
+  initFeedbackForm('aula-01', "Conceitos Primitivos, Postulados e \u00c2ngulos");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Explorador de \u00e2ngulos opostos pelo v\u00e9rtice e bissetriz" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("verticalAngles", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

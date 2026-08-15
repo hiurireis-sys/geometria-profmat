@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 09 — Polígonos Regulares e Trigonometria do Triângulo | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="9">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 9 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-08.html">← Aula 8</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-10.html">Aula 10 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Polígonos Regulares e Trigonometria do Triângulo</h1>
+    <p>Lei dos Senos, Lei dos Cossenos e a geometria dos polígonos</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 3 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Calcular a soma dos ângulos internos e externos de um polígono e o número de diagonais.</li><li>Definir polígono regular e as circunferências inscrita e circunscrita a ele.</li><li>Revisar as razões trigonométricas no triângulo retângulo e os valores notáveis (30°, 45°, 60°).</li><li>Demonstrar a Lei dos Cossenos e a Lei dos Senos, e aplicá-las a problemas do ENQ.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Polígonos: ângulos e diagonais</h2>
+<div class="theorem">
+<div class="label">Teorema 9.1</div>
+<h4>A soma dos ângulos internos de um polígono convexo de \(n\) lados é \((n-2)\cdot180°\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Fixando um vértice, traçamos as \(n-3\) diagonais a partir dele, decompondo o polígono em \(n-2\) triângulos (triangulação a partir de um vértice). A soma dos ângulos internos do polígono é a soma dos ângulos internos desses \(n-2\) triângulos, ou seja, \((n-2)\cdot180°\) (Teorema 4.2).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="note"><strong>Soma dos ângulos externos:</strong> sempre \(360°\), qualquer que seja \(n\) — cada ângulo externo é suplementar ao interno, e a soma de todos os suplementos é \(n\cdot180°-(n-2)\cdot180°=360°\).</div>
+<div class="note"><strong>Número de diagonais:</strong> de cada vértice partem \(n-3\) diagonais (não conta os 2 lados nem o próprio vértice); multiplicando por \(n\) vértices e dividindo por \(2\) (cada diagonal contada duas vezes): \(D=\dfrac{n(n-3)}{2}\).</div>
+
+<h2>2. Polígonos regulares</h2>
+<p>Um <strong>polígono regular</strong> tem todos os lados congruentes e todos os ângulos congruentes. Todo polígono regular admite uma <strong>circunferência circunscrita</strong> (passando por todos os vértices, centro equidistante deles) e uma <strong>circunferência inscrita</strong> (tangente a todos os lados, de raio igual ao <em>apótema</em> — a distância do centro a um lado).</p>
+<p>O ângulo central de um polígono regular de \(n\) lados mede \(\frac{360°}{n}\); o ângulo interno mede \(\frac{(n-2)\cdot180°}{n}\). O apótema \(a_n\), o lado \(\ell_n\) e o raio \(r\) da circunscrita se relacionam por Pitágoras no triângulo isósceles formado por dois raios e um lado: \(a_n=\sqrt{r^2-\left(\frac{\ell_n}{2}\right)^2}\).</p>
+
+<h2>3. Trigonometria no triângulo retângulo</h2>
+<p>Num triângulo retângulo com ângulo agudo \(\theta\), cateto oposto \(op\), cateto adjacente \(adj\) e hipotenusa \(hip\):</p>
+<div class="note">\(\operatorname{sen}\theta=\dfrac{op}{hip}\), \(\quad \cos\theta=\dfrac{adj}{hip}\), \(\quad \operatorname{tg}\theta=\dfrac{op}{adj}=\dfrac{\operatorname{sen}\theta}{\cos\theta}\).</div>
+<table class="enq-table">
+<tr><th>\(\theta\)</th><th>\(\operatorname{sen}\theta\)</th><th>\(\cos\theta\)</th><th>\(\operatorname{tg}\theta\)</th></tr>
+<tr><td>30°</td><td>1/2</td><td>√3/2</td><td>√3/3</td></tr>
+<tr><td>45°</td><td>√2/2</td><td>√2/2</td><td>1</td></tr>
+<tr><td>60°</td><td>√3/2</td><td>1/2</td><td>√3</td></tr>
+</table>
+<p>Esses valores notáveis se obtêm de dois triângulos particulares: o triângulo retângulo isósceles (meio quadrado, ângulos 45-45-90, catetos \(1\) e hipotenusa \(\sqrt2\)) e a metade do triângulo equilátero (ângulos 30-60-90, obtida traçando a altura de um triângulo equilátero de lado \(2\): a altura mede \(\sqrt3\) por Pitágoras).</p>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<h2>4. Leis dos Cossenos e dos Senos</h2>
+<div class="theorem">
+<div class="label">Teorema 9.2 — Lei dos Cossenos</div>
+<h4>\(a^2=b^2+c^2-2bc\cos\widehat A\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Seja \(H\) o pé da altura relativa a \(AB\) (ou seu prolongamento) a partir de \(C\), com \(CH=h\), \(AH=x=b\cos\widehat A\) (com sinal). No triângulo retângulo \(BCH\), com \(BH=c-x\): por Pitágoras, \(a^2=h^2+(c-x)^2=h^2+x^2+c^2-2cx=b^2+c^2-2bc\cos\widehat A\) (usando \(h^2+x^2=b^2\) e \(x=b\cos\widehat A\)).</p>
+<p class="qed">∎</p>
+</div>
+</div>
+<div class="note">Quando \(\widehat A=90°\), recuperamos Pitágoras: a Lei dos Cossenos generaliza Pitágoras para triângulos quaisquer.</div>
+
+<div class="theorem">
+<div class="label">Teorema 9.3 — Lei dos Senos</div>
+<h4>\(\dfrac{a}{\operatorname{sen}\widehat A}=\dfrac{b}{\operatorname{sen}\widehat B}=\dfrac{c}{\operatorname{sen}\widehat C}=2R\) (\(R\)=raio circunscrito)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver demonstração completa ▼</button>
+<div class="proof">
+<p><strong>Demonstração.</strong> Seja \(O\) o centro do círculo circunscrito, raio \(R\); trace o diâmetro \(BD\). \(\widehat{BDC}=\widehat A\) (inscritos no mesmo arco \(BC\), a menos de suplemento — mesmo seno); como \(BD\) é diâmetro, \(\widehat{BCD}=90°\) (ângulo inscrito em diâmetro). No triângulo retângulo \(BCD\): \(\operatorname{sen}\widehat{BDC}=\frac{a}{2R}\), logo \(\operatorname{sen}\widehat A=\frac{a}{2R}\). Idem para os outros vértices.</p>
+<p class="qed">∎</p>
+</div>
+</div>
+
+<div class="example">
+<div class="label">Exatamente as provas pedidas no ENQ</div>
+<p>O <strong>ENQ 2021.2</strong> pede literalmente a demonstração da Lei dos Senos. O <strong>ENQ 2025.1</strong> usa a Lei dos Cossenos para achar um ângulo e a Lei dos Senos para o raio circunscrito. O <strong>ENQ 2023.2</strong> combina a fórmula do apótema com Pitágoras para relacionar o lado de um polígono de \(n\) lados com o de \(2n\) lados.</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">Seu nome (opcional)</div>
+      <input type="text" id="aluno_nome" name="aluno_nome" placeholder="Digite seu nome..." style="width:100%;border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;font-family:inherit;font-size:.95rem;">
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(9);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['9']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 9, window.ENQ_BANK || []);
+  initTeacherBoard(9);
+  initFeedbackForm('aula-09', "Pol\u00edgonos Regulares e Trigonometria do Tri\u00e2ngulo");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Explorador de pol\u00edgonos regulares e Lei dos Senos/Cossenos" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("regularPolygonExplorer", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>

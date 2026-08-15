@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aula 12 — Pirâmides, Cilindros e Cones | Geometria PROFMAT</title>
+<link rel="stylesheet" href="assets/style.css">
+<script>
+  window.MathJax = {
+    tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
+    svg: { fontCache: 'global' }
+  };
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-mml-chtml.js" async></script>
+</head>
+<body data-aula="12">
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <div class="brand-title">
+      <a href="index.html">📐 Geometria — MA13 PROFMAT</a>
+      <small>Revisão pós-aula · Prof. Hiuri</small>
+    </div>
+    <div class="progress-track"><div class="progress-fill" id="progressFill" style="width:0%"></div></div>
+    <span id="progressLabel" style="font-size:.78rem;opacity:.9;"></span>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <div class="lesson-nav">
+    <span class="tag">Aula 12 de 13</span>
+    <div class="nav-buttons">
+      <a class="btn secondary" href="aula-11.html">← Aula 11</a>
+      <a class="btn secondary" href="index.html">Índice</a>
+      <a class="btn" href="aula-13.html">Aula 13 →</a>
+    </div>
+  </div>
+
+  <div class="hero">
+    <h1>Pirâmides, Cilindros e Cones</h1>
+    <p>O tema-recordista do ENQ: quase um terço de toda a geometria cobrada</p>
+    <div class="pill-row">
+      <span class="pill">🎯 4 objetivos</span>
+      <span class="pill">📝 4 exercícios de fixação</span>
+      <span class="pill">🏆 7 questõe(s) de ENQ desta semana</span>
+    </div>
+  </div>
+
+  <div class="card objectives">
+    <h2 style="margin-top:0">Objetivos da aula</h2>
+    <ul>
+    <li>Classificar pirâmides e justificar a fórmula de seu volume via decomposição do prisma.</li><li>Definir troncos de pirâmide e de cone, e calcular suas áreas e volumes.</li><li>Deduzir área lateral/total e volume do cilindro e do cone, incluindo a relação métrica geratriz-raio-altura.</li><li>Dominar o 'truque da razão de volumes' entre sólidos semelhantes ou de mesma base — o padrão mais recorrente do ENQ.</li>
+    </ul>
+  </div>
+
+  <div class="card theory">
+    
+<h2>1. Pirâmides</h2>
+<p>Uma <strong>pirâmide</strong> é o sólido gerado unindo todos os pontos de um polígono plano (a base) a um ponto fora de seu plano (o <em>ápice</em>ou <em>vértice</em>). É <strong>regular</strong> quando a base é um polígono regular e o ápice se projeta no centro da base (nesse caso, todas as faces laterais são triângulos isósceles congruentes).</p>
+<dl class="def-list">
+<dt>Classificação</dt><dd>pelo número de lados da base (triangular = tetraedro, quadrangular, etc.).</dd>
+<dt>Tronco de pirâmide</dt><dd>sólido obtido cortando a pirâmide por um plano paralelo à base e descartando a parte que contém o ápice; tem duas bases paralelas e semelhantes.</dd>
+</dl>
+
+<div class="theorem">
+<div class="label">Teorema 12.1 — Volume da pirâmide</div>
+<h4>\(V=\dfrac13 S_{base}\cdot h\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia.</strong> Um prisma triangular pode ser decomposto em exatamente três tetraedros de mesmo volume, agrupando-os dois a dois em pares de mesma base e mesma altura (logo mesmo volume, por Cavalieri) até cobrir os três. Cada tetraedro tem volume \(\frac13\) do prisma: \(\frac13(S_{base}\cdot h)\). Pirâmides de base poligonal qualquer se reduzem ao caso triangular decompondo a base em triângulos.</p>
+</div>
+</div>
+
+<div class="note"><strong>Área lateral e total de pirâmide regular.</strong> Cada face lateral é um triângulo isósceles de base = lado da base e altura = <em>apótema da pirâmide</em> \(g\) (não confundir com o apótema da base). \(A_{lat}=n\cdot\frac{\ell\cdot g}{2}=\frac{p\cdot g}{2}\) (\(p\)=perímetro da base); \(A_{total}=A_{lat}+S_{base}\). Vale a relação métrica \(g^2=h^2+a_{base}^2\) (Pitágoras entre altura da pirâmide, apótema da base e apótema lateral).</div>
+
+<div class="note"><strong>Volume do tronco de pirâmide</strong> (bases de área \(S_1\) — maior — e \(S_2\) — menor —, altura \(h\)): \(V=\dfrac{h}{3}\left(S_1+S_2+\sqrt{S_1S_2}\right)\) — obtido subtraindo do volume da pirâmide completa o volume da pirâmide menor removida no corte (ambas calculadas pelo Teorema 12.1, usando a razão de semelhança entre as duas pirâmides).</div>
+
+<div class="note"><strong>O padrão-ouro do ENQ nesta aula:</strong> se duas pirâmides compartilham a <em>mesma base</em>, a razão dos volumes é a razão das alturas. Se compartilham o <em>mesmo ápice</em> e as bases são seções paralelas semelhantes, a razão dos volumes é o <strong>cubo</strong> da razão de semelhança linear (Teorema 12.2, abaixo).</div>
+
+<div class="theorem">
+<div class="label">Teorema 12.2 — Semelhança em sólidos</div>
+<h4>Se um sólido é obtido de outro por uma homotetia (semelhança espacial) de razão \(k\), a razão dos volumes é \(k^3\)</h4>
+<button class="proof-toggle" onclick="toggleProof(this)">Ver ideia da demonstração ▼</button>
+<div class="proof">
+<p><strong>Ideia.</strong> Toda medida linear (arestas, alturas) escala por \(k\); toda área escala por \(k^2\) (Teorema 8.2, análogo espacial); logo o volume, que é "área da base vezes altura" (a menos do fator \(\frac13\), comum aos dois sólidos comparados), escala por \(k^2\cdot k=k^3\).</p>
+</div>
+</div>
+
+<div class="widget-slot" data-widget-anchor="1"></div>
+
+<div class="example">
+<div class="label">ENQ 2024.2 e outras — "mesma base, razão de alturas"</div>
+<p>Se \(E\) está sobre a aresta \(AD\) de um tetraedro \(ABCD\), os tetraedros \(ABCE\) e \(ABCD\) compartilham a base \(ABC\); \(\dfrac{V_{ABCE}}{V_{ABCD}}=\dfrac{h_E}{h_D}=\dfrac{AE}{AD}\) (por Tales entre os planos paralelos à base passando por \(E\) e \(D\)). O <strong>ENQ 2024.2</strong> pede exatamente esse raciocínio.</p>
+</div>
+<div class="example">
+<div class="label">ENQ 2025.2 e ENQ 2024.1 — "razão de semelhança ao cubo"</div>
+<p>Unindo baricentros das faces de um tetraedro regular (<strong>ENQ 2025.2</strong>, razão \(1/3\), volumes na razão \(1/27\)) ou calculando o volume de um tetraedro regular diretamente (<strong>ENQ 2024.1</strong>, <strong>ENQ 2026.1</strong>) — sempre reduzindo ao Teorema 12.1 mais Pitágoras para achar a altura.</p>
+</div>
+
+<h2>2. Cilindro</h2>
+<p>Um <strong>cilindro (circular reto)</strong> de raio \(r\) e altura \(h\): \(A_{lat}=2\pi r h\) (retângulo de base \(2\pi r\) — comprimento da circunferência — e altura \(h\), "desenrolando" a superfície lateral), \(A_{total}=2\pi rh+2\pi r^2\), e por Cavalieri (comparando com prisma de mesma área de base e altura), <strong>Volume \(=\pi r^2 h\)</strong>.</p>
+
+<h2>3. Cone</h2>
+<p>Um <strong>cone (circular reto)</strong> de raio \(r\), altura \(h\) e <strong>geratriz</strong> \(g\): pela relação métrica \(g^2=h^2+r^2\) (Pitágoras no triângulo retângulo formado pelo raio, altura e geratriz). \(A_{lat}=\pi rg\) (setor circular de raio \(g\) e arco \(2\pi r\)), \(A_{total}=\pi rg+\pi r^2\), e <strong>Volume \(=\dfrac13\pi r^2h\)</strong> — mesma razão \(\frac13\) da pirâmide, já que o cone é o "limite" de pirâmides regulares com número de lados crescendo indefinidamente.</p>
+<div class="note"><strong>Tronco de cone</strong> (raios \(R>r\), altura \(h\), geratriz \(g\)): \(V=\dfrac{\pi h}{3}(R^2+Rr+r^2)\), análogo ao tronco de pirâmide (caso particular com base circular).</div>
+
+<div class="example">
+<div class="label">Exemplo resolvido</div>
+<p>Uma pirâmide regular de base quadrada tem aresta da base \(6\) e altura \(4\). Calcule o volume e a área lateral.</p>
+<p><em>Solução:</em> \(S_{base}=36\), \(V=\frac13\cdot36\cdot4=48\). Apótema da base \(=3\); apótema lateral \(g=\sqrt{4^2+3^2}=5\); \(A_{lat}=\frac{24\cdot5}{2}=60\) (perímetro \(24\)).</p>
+</div>
+
+  </div>
+
+  <div class="card exercises">
+    <h2 style="margin-top:0">✏️ Exercícios interativos de fixação</h2>
+    <p>Responda e receba feedback imediato — o objetivo é fixar o conteúdo desta aula.</p>
+    <div class="score-bar" id="fixScoreBar">✓ 0 certas · ✗ 0 erradas · 0 respondidas</div>
+    <div id="fixationContainer"></div>
+  </div>
+
+  <div class="card teacher-board">
+    <h2 style="margin-top:0">🧑‍🏫 Quadro do professor</h2>
+    <p>Espaço para sua reflexão pessoal como professor(a) de Educação Básica. Fica salvo neste navegador — só é enviado a mim se você usar o botão de feedback lá embaixo.</p>
+    <label for="board_ensino">Como você costuma ensinar este conteúdo em sala?</label>
+    <textarea id="board_ensino" placeholder="Descreva sua abordagem, recursos, exemplos que usa..."></textarea>
+    <label for="board_dificuldades">Quais dificuldades seus alunos costumam encontrar?</label>
+    <textarea id="board_dificuldades" placeholder="Erros comuns, bloqueios, pré-requisitos que faltam..."></textarea>
+    <label for="board_visao">Sua visão, como professor(a), sobre este conteúdo</label>
+    <textarea id="board_visao" placeholder="Relevância, dificuldade de ensinar, o que mudaria no currículo..."></textarea>
+    <div style="margin-top:14px;">
+      <button class="btn accent" id="board_save">Salvar reflexão</button>
+      <span class="saved-flag" id="board_saved_flag">✓ salvo neste navegador</span>
+    </div>
+  </div>
+
+  <div class="card enq-quiz">
+    <h2 style="margin-top:0">🏆 Mini-simulado ENQ (acumulado)</h2>
+    <p>Questões reais de geometria de provas ENQ (2021.1–2026.1) — desta semana e de semanas anteriores, para revisão espaçada.</p>
+    <div id="enqContainer"></div>
+  </div>
+
+  <div class="card survey">
+    <h2 style="margin-top:0">📋 Pesquisa da aula (projeto DesignMat)</h2>
+    <p>Suas respostas alimentam a pesquisa de Design Educacional (DesignMat) sobre o uso deste material no PROFMAT.</p>
+
+    <div class="survey-q">
+      <div class="q-text">Seu nome (opcional)</div>
+      <input type="text" id="aluno_nome" name="aluno_nome" placeholder="Digite seu nome..." style="width:100%;border:1.5px solid var(--border);border-radius:10px;padding:9px 12px;font-family:inherit;font-size:.95rem;">
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">1. O quanto este conteúdo já era familiar para sua prática docente?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_familiaridade" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">2. O quanto esta aula ajudou a aprofundar sua compreensão matemática do tema?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_aprofundamento" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">3. O quanto você recomendaria este material a outro professor?</div>
+      <div class="likert">
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="1"> 1</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="2"> 2</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="3"> 3</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="4"> 4</label>
+        
+        <label><input type="radio" name="pesquisa_recomendaria" value="5"> 5</label>
+        
+      </div>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">4. Na sua visão, este tema deveria ter mais ou menos espaço na Educação Básica? Por quê?</div>
+      <textarea name="pesquisa_espaco_curricular" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="survey-q">
+      <div class="q-text">5. Comentários livres sobre a aula, o site ou a pesquisa DesignMat</div>
+      <textarea name="pesquisa_comentarios" style="width:100%;min-height:70px;border:1.5px solid var(--border);border-radius:10px;padding:10px 12px;font-family:inherit;"></textarea>
+    </div>
+
+    <div class="note">Ao enviar, também seguem automaticamente: quantas questões você acertou/errou nesta página e o tempo que ficou logado nesta aula — dados de uso que ajudam a melhorar o material.</div>
+
+    <button class="btn accent" id="sendFeedbackBtn" style="margin-top:10px;">Enviar feedback da aula</button>
+    <div class="feedback-status" id="feedbackStatus"></div>
+  </div>
+
+</div>
+
+<footer class="site-footer">
+  Material de apoio pós-aula — MA13 Geometria, PROFMAT · baseado em Caminha (Geometria, Coleção PROFMAT/SBM), Dolce &amp; Pompeo (FME 9 e 10) e provas ENQ oficiais.
+</footer>
+
+<div class="timer-chip" id="timerChip">⏱ 0s nesta aula</div>
+
+<script src="assets/fixation_bank.js"></script>
+<script src="assets/enq_bank.js"></script>
+<script src="assets/app.js"></script>
+<script src="assets/interactives.js"></script>
+<script>
+  markAulaVisited(12);
+  updateProgressBar(13);
+  renderQuiz('fixationContainer', (window.FIXATION_BANK && window.FIXATION_BANK['12']) || [], 'fix');
+  renderEnqSimulado('enqContainer', 12, window.ENQ_BANK || []);
+  initTeacherBoard(12);
+  initFeedbackForm('aula-12', "Pir\u00e2mides, Cilindros e Cones");
+
+  (function(){
+    var anchor = document.querySelector('.theory .widget-slot[data-widget-anchor="1"]');
+    if(anchor){
+      var box = document.createElement('div');
+      box.className = 'widget-box';
+      box.innerHTML = '<h3 style="margin-top:0">🎮 ' + "Calculadora de volumes: pir\u00e2mide, cilindro e cone" + '</h3>';
+      var inner = document.createElement('div');
+      inner.id = 'interactiveWidget';
+      box.appendChild(inner);
+      anchor.replaceWith(box);
+      initInteractiveWidget("volumeCalculator", 'interactiveWidget');
+      if(window.MathJax && window.MathJax.typesetPromise) window.MathJax.typesetPromise([box]);
+    }
+  })();
+</script>
+</body>
+</html>
